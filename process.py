@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ Preprocess the sample dataset
-Usage: python process.py ./athome4_test.tgz
+Usage: python process.py athome4_sample.tgz
 """
 
 import sys
