@@ -26,6 +26,8 @@ def get_paragraphs(filecontent):
 
     if len(''.join(cur_para)) > 0 and len(''.join(cur_para)) < 100 and final_paragraphs:
         final_paragraphs[-1] += '\n\n' + '\n\n'.join(cur_para)
+    elif len(''.join(cur_para)) > 0:
+        final_paragraphs.append('\n\n'.join(cur_para))
 
     return final_paragraphs
 
