@@ -50,7 +50,7 @@ def get_documents(doc_ids, query=None):
         document = {
             'doc_id': doc_id,
             'title': title,
-            'content': "<pre>" + content + "</pre>",
+            'content': content.replace("\n", "<br/>"),
             'date': date
         }
         result.append(document)
@@ -79,7 +79,7 @@ def get_documents_with_snippet(doc_ids, query):
             para_id = doc_para_id['doc_id'] + '.' + doc_para_id['para_id']
             resp, content = h.request(url.format(PARA_URL, para_id),
                                       method="GET")
-            doc['snippet'] = "<pre>" + content.decode('utf-8', 'ignore') + "</pre>"
+            doc['snippet'] = content.decode('utf-8', 'ignore').replace("\n", "<br />");
         except:
             doc['snippet'] = u'N/A'
     return result
