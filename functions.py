@@ -34,7 +34,7 @@ def get_documents(doc_ids, query=None):
     h = httplib2.Http()
     for doc_id in doc_ids:
         url = '{}/{}'.format(DOCUMENTS_URL, doc_id)
-        resp, content = h.request(url.format(DOCUMENTS_URL, doc_id),
+        resp, content = h.request(url,
                                   method="GET")
         content = content.decode('utf-8', 'ignore')
         date = get_date(content)
